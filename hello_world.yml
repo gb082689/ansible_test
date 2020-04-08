@@ -4,3 +4,11 @@
   - name: Get Operating System
     debug:
       msg: "{{ ansible_distribution }} {{ ansible_fqdn }}"
+      
+  - name: yum_command 
+    yum:
+      list: installed
+    register: yum_packages
+
+  - debug:
+      var: yum_packages
