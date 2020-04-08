@@ -5,7 +5,7 @@
     debug:
       msg: "{{ ansible_distribution }} {{ ansible_fqdn }}"
       
-  - name: yum_command 
+  - name: Run yum update 
     yum:
       name: '*'
       state: latest
