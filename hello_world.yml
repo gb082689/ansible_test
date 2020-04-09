@@ -3,7 +3,7 @@
   tasks:
   - name: Get Operating System
     debug:
-      msg: "{{ ansible_distribution }} {{ ansible_fqdn }}"
+      msg: "{{ ansible_distribution }} {{ ansible_default_ipv4 }}"
       
   - name: Run yum update 
     yum:
