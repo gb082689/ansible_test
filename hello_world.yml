@@ -15,7 +15,6 @@
       name: admins
       state: present
 
-
   - name: Add the user 'Zippy' with a specific uid and a primary group of 'admin'
     user:
       name: zippy
@@ -28,3 +27,10 @@
       chain: "{{ item }}"
       flush: yes
     with_items:  [ 'INPUT', 'FORWARD', 'OUTPUT' ]
+
+  - name: Change Motd
+    template:
+      src: templates/motd.j2
+      dest: /etc/motd
+      mode: 0444
+      
