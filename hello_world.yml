@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  tasks:
+  
   - name: Checking linux Connectivity
   #  gather_facts: false
   ignore_errors: true
