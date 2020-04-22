@@ -1,7 +1,7 @@
 ---
 - hosts: all
   
-  - name: Checking linux Connectivity
+- name: Checking linux Connectivity
   #  gather_facts: false
   ignore_errors: true
   ignore_unreachable: true
