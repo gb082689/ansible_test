@@ -7,14 +7,14 @@
   ignore_unreachable: true
   become: true
   tasks:
-    - name: Checking Linux Connectivity
-      shell: whoami
-      register: cmdopt
-    - debug: var=cmdopt
-    - debug: msg="Unble to reach endpoint"
-      when:  cmdopt.failed|default("true")
-    - debug: msg="Able to reach endpoint"
-      when: cmdopt.changed |default("false")
+  - name: Checking Linux Connectivity
+    shell: whoami
+    register: cmdopt
+  - debug: var=cmdopt
+  - debug: msg="Unble to reach endpoint"
+    when:  cmdopt.failed|default("true")
+  - debug: msg="Able to reach endpoint"
+    when: cmdopt.changed |default("false")
   - name: Get Operating System
     debug:
       msg: "{{ ansible_distribution }} {{ ansible_default_ipv4 }}"
