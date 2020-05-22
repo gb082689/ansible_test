@@ -1,5 +1,5 @@
 ---
-- hosts: win_db_servers
+- hosts: all
   become: false
   tasks:
 #
