@@ -18,10 +18,4 @@
     - name: inet_protocols
       value: "{{ postfix_inet_protocols }}"
   notify: restart postfix    
-  
-  - name: Start Postfix service
-    service:
-      name: postfix
-      state: started
-      enabled: true
-      
+
