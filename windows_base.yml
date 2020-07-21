@@ -8,5 +8,5 @@
       
   - name: Check for Windows updates
     win_updates:
-      categories: SecurityUpdates
+      categories: CriticalUpdates
       
