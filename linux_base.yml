@@ -4,6 +4,9 @@
   ignore_errors: true
   ignore_unreachable: true
   become: true
+  vars:
+    packages:
+      - yum
   tasks:
   - name: Checking Linux Connectivity
     shell: whoami
@@ -34,9 +37,7 @@
       dest: /etc/motd
       mode: 0444
 
-  - name: Get packages
-    include_vars: vars/main.yaml
- 
+
   - name: Install packages
     yum:
       name: "{{ packages }}"
