@@ -6,7 +6,8 @@
   become: true
   vars:
     packages:
-      - yum
+      - vim
+      - tree
   tasks:
   - name: Checking Linux Connectivity
     shell: whoami
