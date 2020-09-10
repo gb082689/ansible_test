@@ -33,8 +33,9 @@
       src: templates/motd.j2
       dest: /etc/motd
       mode: 0444
- 
- include_vars: vars/main.yaml
+
+  - name: Get packages
+    include_vars: vars/main.yaml
  
   - name: Install packages
     yum:
