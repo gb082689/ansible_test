@@ -22,18 +22,6 @@
       name: '*'
       state: latest
 
-  - name: Ensure group "admins" exists
-    group:
-      name: admins
-      state: present
-
-  - name: Add the user 'Zippy' with a specific uid and a primary group of 'admin'
-    user:
-      name: zippy
-      comment: Zippy
-      uid: 1040
-      group: admins
-
   - name: iptables flush filter
     iptables:
       chain: "{{ item }}"
