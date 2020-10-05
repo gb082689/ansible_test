@@ -9,4 +9,4 @@
   - name: Check for Windows updates
     win_updates:
       categories: CriticalUpdates
-      
+    reboot: yes
