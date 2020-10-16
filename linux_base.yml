@@ -25,6 +25,13 @@
     yum:
       name: '*'
       state: latest
+    when: ansible_distribution == 'CentOS'
+    
+  - name: Run apt update 
+    apt:
+      name: '*'
+      state: latest
+    when: ansible_distribution == 'Ubuntu'
 
   - name: iptables flush filter
     iptables:
