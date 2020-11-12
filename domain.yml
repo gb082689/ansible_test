@@ -19,12 +19,12 @@
   - name: Add host to Ansible inventory
     add_host:
       name: '{{ temp_address }}'
-      ansible_user: '{{ local_admin }}'
-      ansible_password: '{{ temp_password }}'
-      ansible_connection: winrm
+      ansible_user: 'admin'
+      ansible_password: 'P4ssw0rd'
+      
     
      
   - name: Wait for system to become reachable over WinRM
     wait_for_connection:
-      timeout: 900
+      timeout: 90
     delegate_to: '{{ temp_address }}'
