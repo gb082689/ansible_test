@@ -1,0 +1,13 @@
+- name: Add host to Ansible inventory
+  add_host:
+    name: '{{ temp_address }}'
+    ansible_user: '{{ local_admin }}'
+    ansible_password: '{{ temp_password }}'
+    ansible_connection: winrm
+    ansible_winrm_transport: ntlm
+    ansible_winrm_server_cert_validation: ignore
+    ansible_winrm_port: 5986
+- name: Wait for system to become reachable over WinRM
+  wait_for_connection:
+    timeout: 900
+  delegate_to: '{{ temp_address }}'
